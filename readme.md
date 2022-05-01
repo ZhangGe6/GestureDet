@@ -81,11 +81,7 @@ The checkpoint can be downloaded from [here](https://pan.baidu.com/s/1z6b1LMYNnv
 
 ### inference
 
-Using the trained model, I get the inference result like this:
-
-![](./docs/self.gif)
-
-The whole pipeline can run at **~27 fps** on my machine (one TITAN X GPU).
+Using the trained model, The whole pipeline can run at **~27 fps** on my machine (one TITAN X GPU).
 
 
 ## deploy
