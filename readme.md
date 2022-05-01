@@ -39,7 +39,7 @@ Data matters. I establish two reasonably big and good-annotated datasets for Ges
 
 - The hand pose estimation dataset is aggregated from [GANerated Hands Dataset](https://handtracker.mpi-inf.mpg.de/projects/GANeratedHands/GANeratedDataset.htm),  [MHP](http://www.rovit.ua.es/dataset/mhpdataset/), and my self-recorded data. It contains **`111749` train imags and `1128` validate images.** Each image has at leat 1 hand on it and each hand has 21 joints.
 
-[Here](./datasets_prepare.md) is a more detailed intro about how I collect and process these two datasets.
+[Here](./docs/datasets_prepare.md) is a more detailed intro about how I collect and process these two datasets.
 
 ### model selection
 GestureDet is built with performance in mind, so I choose lightweight model for more efficient inference:
@@ -62,8 +62,7 @@ I get the training and validating curve like this:
 
 ![](./docs/nanodet_train_curve.png)
 
-After training, I get the detection model with mAP of 0.5644.
-
+After training, I get the detection model with mAP of 0.5644. The checkpoint can be downloaded from [here](https://pan.baidu.com/s/1JT5vzP-KLkdUFaSmGRnJQg?pwd=tupz) and placed in the folder `./Detector/nanodet/workspace/nanodet_m_hand/`
 
 #### hand pose estimation model training
 For image pre-processing, model training and result post-processing, I largely refer to [AlphaPose](https://github.com/MVIG-SJTU/AlphaPose).
@@ -77,6 +76,8 @@ I get the training and validating curve like this:
 <img src="./docs/pose_train_curve.png" style="zoom: 40%;" />
 
 The validate curve is forgotten to be recorded... (this curve image maybe replaced in the future).
+
+The checkpoint can be downloaded from [here](https://pan.baidu.com/s/1z6b1LMYNnvj-xxPBtLN0GQ?pwd=twgz) and placed in the folder `./PoseEstimator/UltralightSimplePose/checkpoints/`
 
 ### inference
 
@@ -148,7 +149,7 @@ Model conversion routine `pytorch -> onnx -> ncnn` is commonly used (as what I d
 Then I get 6 files as expected and I take the `pose_torchscipt.ncnn.param` and `pose_torchscipt.ncnn.bin` to be loaded.
 
 #### GestureDet Android ncnn demo
-I implement a GestureDet Android demo using the converted ncnn models. The android demo can be found in `deploy_ncnn/GestureDet_ncnn`. **This demo can run as fast as 25 fps with Kirin 990.**
+I implement a GestureDet Android demo using the converted ncnn models. The android demo can be found in `demo_ncnn_Android`. **This demo can run as fast as 25 fps with Kirin 990.**
 
 ![](./docs/android_demo.gif)
 
@@ -186,10 +187,6 @@ when I use TensorRT inference, I get the speed of **~29 fps**, which is slight f
 
 Enjoy it and any issues are welcomed! 
 
-## TODO
-
-- [ ] try ncnn fp16, int8 inference
-- [ ] try TensorRT int8 inference
 
 ## Credits and referred materials
 

@@ -99,8 +99,8 @@ def validate(val_loader, model, criterion, epoch, args, tb_logger):
         if i % args.disp_freq == 0:
             # viz.loss_curve(losses.avg)
             step = i + epoch * len(val_loader)
-            tb_logger.add_scalar('train/loss', loss_logger.avg, step)
-            tb_logger.add_scalar('train/acc', acc_logger.avg, step)
+            tb_logger.add_scalar('eval/loss', loss_logger.avg, step)
+            tb_logger.add_scalar('eval/acc', acc_logger.avg, step)
 
     return acc_logger.avg
 

@@ -1,0 +1,1 @@
+ncnnoptimize, ncnn2int8, ncnn2table, onnx2ncnn, pnnx from ncnn are placed in this folder

@@ -128,9 +128,17 @@ workspace/
 *.param
 *.bin
 
-
-# tmp
 tmp_assets/
-TMP/
-TMP_self/
 */runs/
+GYM/
+
+*ppt
+*pptx
+
+
+PoseEstimator/UltralightSimplePose/bk/
+tools/deploy_ncnn/ncnnoptimize
+tools/deploy_ncnn/ncnn2int8
+tools/deploy_ncnn/ncnn2table
+tools/deploy_ncnn/onnx2ncnn
+tools/deploy_ncnn/pnnx
