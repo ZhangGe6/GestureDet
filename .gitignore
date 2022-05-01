@@ -142,3 +142,4 @@ tools/deploy_ncnn/ncnn2int8
 tools/deploy_ncnn/ncnn2table
 tools/deploy_ncnn/onnx2ncnn
 tools/deploy_ncnn/pnnx
+Detector/nanodet/tools/onnx2ncnn
